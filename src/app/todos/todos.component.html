@@ -1,0 +1,7 @@
+<ul class="todos">
+  <li *ngFor="let todo of todos" (click)="onSelect(todo)" [ngStyle]="isComplete(todo.isComplete)">
+    {{todo.title}}
+  </li>
+</ul>
+
+
