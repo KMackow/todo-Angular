@@ -9,7 +9,7 @@ jobs:
          key: dependency-cache-{{ checksum "package.json" }}
      - run:
          name: Setup Dependencies
-         command: npm install && apt-get install default-jre
+         command: npm install
      - run:
          name: install jre
          command: sudo apt-get install default-jre
@@ -17,3 +17,4 @@ jobs:
          key: dependency-cache-{{ checksum "package.json" }}
          paths:
            - ./node_modules
+
