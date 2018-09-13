@@ -2,7 +2,11 @@
   "name": "todo-angular",
   "version": "0.0.0",
   "main": "server.js",
-  "engine": "node >=0.6.x",
+  "engine": {
+    "node": "6.11.0",
+    "npm": "6.4.1"
+  },
+
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
@@ -10,13 +14,15 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "heroku-postbuild": "ng build"
+    "postinstall": "ng build --aot -prod"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "^6.1.0",
     "@angular/common": "^6.1.0",
     "@angular/compiler": "^6.1.0",
+    "@angular/cli": "~6.2.1",
+    "@angular/compiler-cli": "^6.1.0",
     "@angular/core": "^6.1.0",
     "@angular/forms": "^6.1.0",
     "@angular/http": "^6.1.0",
@@ -28,12 +34,11 @@
     "express": "^4.15.4",
     "rxjs": "~6.2.0",
     "underscore": "^1.9.1",
-    "zone.js": "~0.8.26"
+    "zone.js": "~0.8.26",
+    "typescript": "~2.9.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.8.0",
-    "@angular/cli": "~6.2.1",
-    "@angular/compiler-cli": "^6.1.0",
     "@angular/language-service": "^6.1.0",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
@@ -49,6 +54,6 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
-    "typescript": "~2.9.2"
+    
   }
 }
