@@ -1,0 +1,19 @@
+version: 2
+jobs:
+ build:
+   docker:
+     - image: circleci/node:8
+   steps:
+     - checkout
+     - restore_cache: # special step to restore the dependency cache
+         key: dependency-cache-{{ checksum "package.json" }}
+     - run:
+         name: Setup Dependencies
+         command: npm install && apt-get install default-jre
+     - run:
+         name: install jre
+         command: sudo apt-get install default-jre
+     - save_cache: # special step to save the dependency cache
+         key: dependency-cache-{{ checksum "package.json" }}
+         paths:
+           - ./node_modules

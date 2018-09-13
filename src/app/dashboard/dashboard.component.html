@@ -1,7 +1,7 @@
 <h3>Top Todos</h3>
 <div class="grid grid-pad">
-  <a *ngFor="let todo of todos" class="col-1-4">
-    <div class="module todo">
+  <a *ngFor="let todo of todos" [ngClass]="'col-1-' + todos.length">
+    <div class="module todo" (click)="onSelect(todo)"> 
       <h4>{{todo.title}}</h4>
     </div>
   </a>

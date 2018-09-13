@@ -11,13 +11,24 @@ export class DashboardComponent implements OnInit {
   todos: Todo[] = [];
  
   constructor(private todoService: TodoService) { }
+
+  getTodos(): void {
+    this.todoService.getTodos()
+      .subscribe(todos => {
+        this.todos = todos.filter(todo => !todo.isComplete).slice(0, 4)
+      });
+  }
+  
+  onSelect(todo: Todo): void {
+    this.todoService.updateTodo(todo.id)
+      .subscribe(_ => {
+        this.getTodos();
+      });
+  }
  
   ngOnInit() {
     this.getTodos();
   }
  
-  getTodos(): void {
-    this.todoService.getTodos()
-      .subscribe(todos => this.todos = todos.slice(0, 4));
-  }
+  
 }

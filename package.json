@@ -1,9 +1,11 @@
 {
   "name": "todo-angular",
   "version": "0.0.0",
+  "main": "server.js",
+  "engine": "node >=0.6.x",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -20,8 +22,11 @@
     "@angular/platform-browser": "^6.1.0",
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
+    "body-parser": "^1.12.4",
     "core-js": "^2.5.4",
+    "express": "^4.15.4",
     "rxjs": "~6.2.0",
+    "underscore": "^1.9.1",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {

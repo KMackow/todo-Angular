@@ -1,7 +1,22 @@
+<div class="Filters" style="margin-top: 20px">
+  <button class="All" (click)="changeFilter('All')">All</button>
+  <button class="Completed" (click)="changeFilter('Completed')" style="margin-left: 20px">Completed</button>
+  <button class="Outstanding" (click)="changeFilter('Outstanding')" style="margin-left: 20px">Outstanding</button>
+</div>
 <ul class="todos">
-  <li *ngFor="let todo of todos" (click)="onSelect(todo)" [ngStyle]="isComplete(todo.isComplete)">
-    {{todo.title}}
+  <li *ngFor="let todo of todosToDisplay()">
+    <span (click)="onSelect(todo)" [ngStyle]="isComplete(todo.isComplete)">{{todo.title}}</span>
+    <button class="delete" title="Delete" (click)="delete(todo)" style="margin-left: 20px; float: right;">Delete</button>
   </li>
 </ul>
+<div class="add-Todo">
+  <form #f="ngForm" (ngSubmit)="addTodo(f)" name="todo-form">
+    <input type="text" name="title" ngModel required>
+    <button type="submit" class="btn">Add Todo</button>
+  </form>    
+</div>
+<div>
+  <button (click)="deleteCompleted()" style="margin-top: 20px;">Delete Completed</button>
+</div>
 
 
