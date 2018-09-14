@@ -7,7 +7,6 @@ import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
-import { DndModule } from 'ng2-dnd';
 
 @NgModule({
   declarations: [
@@ -21,7 +20,6 @@ import { DndModule } from 'ng2-dnd';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    DndModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,20 +3,16 @@ import {TodoService} from '../todo.service';
 import {NgForm} from '@angular/forms';
 import {Todo} from '../todo';
 
+
 @Component({
   selector: 'app-todos',
   templateUrl: './todos.component.html',
   styleUrls: ['./todos.component.css']
 })
 export class TodosComponent implements OnInit {
-  
   todos: Todo[];
   filter: string = "All";  
   constructor(private todoService: TodoService) { }
-
-  onMove() {
-  
-}
 
   changeFilter(filter: string): void {
     this.filter = filter;
