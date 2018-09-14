@@ -3,12 +3,15 @@
   "version": "0.0.0",
   "main": "server.js",
 <<<<<<< HEAD
+<<<<<<< HEAD
   "engine": {
     "node": "6.11.0",
     "npm": "6.4.1"
   },
    "scripts": {
 =======
+=======
+>>>>>>> parent of 6eff109... heroku updates
   "engine": "node >=0.6.x",
   "scripts": {
 >>>>>>> parent of 6eff109... heroku updates
@@ -54,6 +57,9 @@
 =======
     "tslint": "~5.11.0",
     "typescript": "~2.9.2"
+<<<<<<< HEAD
+>>>>>>> parent of 6eff109... heroku updates
+=======
 >>>>>>> parent of 6eff109... heroku updates
   }
 }
