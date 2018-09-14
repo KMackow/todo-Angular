@@ -14,6 +14,8 @@ export class TodosComponent implements OnInit {
   filter: string = "All";  
   constructor(private todoService: TodoService) { }
 
+  onMove() {}
+
   changeFilter(filter: string): void {
     this.filter = filter;
   }

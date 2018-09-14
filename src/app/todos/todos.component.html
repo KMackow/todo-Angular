@@ -3,12 +3,18 @@
   <button class="Completed" (click)="changeFilter('Completed')" style="margin-left: 20px">Completed</button>
   <button class="Outstanding" (click)="changeFilter('Outstanding')" style="margin-left: 20px">Outstanding</button>
 </div>
-<ul class="todos">
-  <li *ngFor="let todo of todosToDisplay()">
-    <span (click)="onSelect(todo)" [ngStyle]="isComplete(todo.isComplete)">{{todo.title}}</span>
-    <button class="delete" title="Delete" (click)="delete(todo)" style="margin-left: 20px; float: right;">Delete</button>
-  </li>
-</ul>
+
+<ul class="todos" dnd-sortable-container [sortableData]="todos">
+    <li *ngFor="let todo of todosToDisplay(); let i = index" class="todo-item" dnd-sortable [sortableIndex]="i"
+    [dragData]="todo" (onDropSuccess)="onMove($event, i)">
+      <div class="view">
+        <span class="handle">=</span>
+        <span style="margin-left: 10px" (click)="onSelect(todo)" [ngStyle]="isComplete(todo.isComplete)">{{todo.title}}</span>
+        <button class="delete" title="Delete" (click)="delete(todo)" style="margin-left: 20px; float: right;">Delete</button>
+      </div>
+    </li>
+  </ul>
+  
 <div class="add-Todo">
   <form #f="ngForm" (ngSubmit)="addTodo(f)" name="todo-form">
     <input type="text" name="title" ngModel required>
